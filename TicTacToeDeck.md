@@ -4,6 +4,7 @@ Learn Rails through TicTacToe. It's test driven, fill in the blanks and...Have f
 
 # Getting Started
 
+* `Play the game you'll be building <a href="http://wwc-tic-tac-toe.herokuapp.com">here!</a>`
 * `Find the Repo here: https://github.com/WomenWhoCode/TicTacToeSkeleton`
 * `Fork it, instructions here: https://help.github.com/articles/fork-a-repo`
 * `Clone it to your computer`
