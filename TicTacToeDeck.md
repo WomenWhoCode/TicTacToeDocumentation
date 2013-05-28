@@ -11,7 +11,7 @@ Learn Rails through TicTacToe. It's test driven, fill in the blanks and...Have f
 
 # Gemfile
 
-* `listed gem version defaults since each have different environments`
+* `listed gem version defaults and included .rvmrc since each have different environments`
 
 run...
 
@@ -48,7 +48,7 @@ Array.new(3) { Array.new(3) }
 
 ~~~~
 
-we'll view with the board next...
+we'll view with the board next inside our console...
 
 # Rails Console / Pry
 
@@ -60,11 +60,10 @@ we'll view with the board next...
 @@@ ruby
 
 $ rails c
->> wtf?
 >> g = Game.new
 >> g.board
 >> g.display_board
->> ^d
+>> ^d               # to exit
 
 ~~~~
 
@@ -99,10 +98,12 @@ $ rspec spec/
 
 # Game model
 
-* `app/models/game.rb`
-* `spec/models/games_spec.rb`
+* `This is where we make methods to actually play the game and identify who the player and winner are!`
+* `Steps on how to complete the models are in app/models/game.rb and spec/models/games_spec.rb`
+* `Use the console here to really understand how the game should be played`
+* `Rely on helper methods when using the console!`
 
-# Resources
+# Resources to help get through the models
 
 * `WWC google group`
 * `Ruby Tuesday Core Team`
@@ -112,10 +113,6 @@ $ rspec spec/
 * `Learn to Program`
 * `Beginning Ruby`
 * `RailsGuides`
-
-!SLIDE
-
-Come Again
 
 # Updating routes.rb
 
@@ -142,7 +139,8 @@ edit_game GET    /games/:id/edit(.:format) games#edit
 
 # REST (Representational State Transfer)
 
-User agents and servers transmit representations of resources between one another via a common interface (HTTP).  HTTP has seven methods, four of which are used by Rails in its RESTful routing.
+User agents and servers transmit representations of resources between one another via a common interface (HTTP).  
+HTTP has seven methods, four of which are used by Rails in its RESTful routing.
 
 Restful routes used by Rails:
 
@@ -179,7 +177,8 @@ The other methods that we need are in the Games controller, waiting for you to f
 
 # erb
 
-erb is a library with which one can insert ruby code into HTML.  This code is all executed, but only the code on the line with the `<%=` is displayed on the page.
+erb is a library with which one can insert ruby code into HTML.  
+This code is all executed, but only the code on the line with the `<%=` is displayed on the page.
 
 ~~~~
 @@@ HTML
@@ -193,7 +192,11 @@ erb is a library with which one can insert ruby code into HTML.  This code is al
 
 # params
 
-To simplify things a bit, params are part of the information passed between server and user agent.  In Rails they are treated as a hash. For example, when viewing the games index page and wanting to view a game, if you click on that game, in the following code the id of the game is stored in the params hash, and accessed by the controller's show method, which makes it available to the view by putting it in an instance variable:
+To simplify things a bit, params are part of the information passed between server and user agent.  
+In Rails they are treated as a hash. For example, when viewing the games index page and wanting to 
+view a game, if you click on that game, in the following code the id of the game is stored in the 
+params hash, and accessed by the controller's show method, which makes it available to the view by
+putting it in an instance variable:
 
 ~~~~
 @@@ HTML
@@ -221,10 +224,16 @@ http://rails.nuvvo.com/lesson/6371-action-controller-parameters
 
 # partials
 
-There are many partials in our views.  Take a look at app/views/layouts: any file that starts with an underscore is a partial.  The application layout itself could be considered a partial.  Partials contain snippets of view code which can be inserted into any other view file.  Partials are code that will be used over and over again in the views, or are for any other reason more easily dealt with when separated from the main view; an obvious example is the application layout, which is used on every page. 
+There are many partials in our views.  Take a look at app/views/layouts: any file that starts with an underscore 
+is a partial.  The application layout itself could be considered a partial.  Partials contain snippets of view 
+code which can be inserted into any other view file.  Partials are code that will be used over and over again in 
+the views, or are for any other reason more easily dealt with when separated from the main view; an obvious example 
+is the application layout, which is used on every page. We've extracted things such as the header, footer and shim
+(code to provide help for Internet Explorer browsers that don't have support for HTML5) from the application layout 
+in order to make them easier to edit.  In some applications, though not ours at this moment, the application layout 
+is a huge file, and separating out these crucial elements makes them easier to find and edit when the need arises.
 
-We've extracted things such as the header, footer and shim (code to provide help for Internet Explorer browsers that don't have support for HTML5) from the application layout in order to make them easier to edit.  In some applications, though not ours at this moment, the application layout is a huge file, and separating out these crucial elements makes them easier to find and edit when the need arises.
-
-We've also created a partial to be used in our TicTacToe board - app/views/game/_board_form.html.erb.  Can you see where it might be used?
+We've also created a partial to be used in our TicTacToe board - app/views/game/_board_form.html.erb. Can you see 
+where it might be used?
 
 See also: http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials
