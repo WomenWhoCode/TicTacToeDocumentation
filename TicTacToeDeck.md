@@ -72,7 +72,7 @@ methods used here are found in app/helpers/games_helper.rb
 
 # Board Validator
 
-* `app/validators/game/board.rb`
+* `app/validators/game/board_validator.rb`
 * `makes sure board length is => Array.new(3) { Array.new(3) } and input 'o', 'x', nil`
 
 # Players
