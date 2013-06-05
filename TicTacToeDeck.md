@@ -10,6 +10,19 @@ Learn Rails through TicTacToe. It's test driven, fill in the blanks and...Have f
 * `Clone it to your computer`
 * `Open the App in your text editor, i.e. Sublime or Komodo Edit`
 
+# .rvmrc
+
+* `it specifies which version of ruby you should use for this app!`
+* `once you cd into TicTacToeSkeleton...`
+run...
+~~~~
+@@@ ruby
+
+$ rvm use 1.9.3        
+// else you'll start getting messages like 'install bundler' or 'install rails'
+
+~~~~
+
 # Gemfile
 
 * `listed gem version defaults and included .rvmrc since each have different environments`
